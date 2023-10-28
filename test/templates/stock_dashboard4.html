@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Chart Dashboard</title>
+</head>
+<body>
+    <h1>Stock Chart Dashboard</h1>
+    <ul>
+        {% for ticker in tickers %}  <!-- 종목 리스트를 반복하여 각 종목에 대한 링크를 생성합니다. -->
+        <li><a href="/chart/{{ticker}}">{{ticker}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="stock-chart"></div>
+
+    <script>
+        // Plotly 그래프를 생성하고 반응형으로 만듭니다.
+        var chart_base64 = "{{ chart_base64 }}";
+        var chart_data = "data:image/png;base64," + chart_base64;
+
+        var layout = {
+            title: "Stock Price Chart",
+            xaxis: { title: "Date" },
+            yaxis: { title: "Stock Price" },
+        };
+
+        var chartDiv = document.getElementById('stock-chart');
+
+        var img = new Image();
+        img.src = chart_data;
+        img.style.maxWidth = '100%';
+        img.style.height = 'auto';
+
+        chartDiv.appendChild(img);
+    </script>
+</body>
+</html>
