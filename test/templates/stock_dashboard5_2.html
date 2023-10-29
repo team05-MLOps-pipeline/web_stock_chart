@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Chart Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto p-8">
+        <h1 class="text-4xl text-center mb-8">Stock Chart Dashboard</h1>
+        <div class="grid gap-4 grid-cols-4">
+            {% for ticker in tickers %}
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h5 class="text-lg font-bold mb-2">{{ticker}}</h5>
+                <a href="/chart/{{ticker}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Chart</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
