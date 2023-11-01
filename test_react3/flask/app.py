@@ -14,11 +14,5 @@ def get_stock_data(ticker):
     data = stock.history(period="1y")  # 일일 데이터를 가져옵니다.
     return data.to_json(orient='index')
 
-
-@app.route('/tickers', methods=['GET'])
-def get_tickers():
-    tickers = ['AAPL', 'GOOGL', 'TSLA', 'AMZN', 'MSFT']  # 실제 사용할 종목 리스트로 교체해 주세요.
-    return jsonify(tickers)
-
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

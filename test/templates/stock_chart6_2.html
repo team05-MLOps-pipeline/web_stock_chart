@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ticker}} Stock Chart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">{{ticker}} Stock Chart for {{date}}</h1>
+        <div class="text-center mb-4">
+            <a href="/chart/{{ticker}}?date={{previous_date}}" class="btn btn-primary">Previous Day</a>  <!-- 이전 날짜 버튼을 추가합니다. -->
+            <a href="/chart/{{ticker}}?date={{next_date}}" class="btn btn-primary">Next Day</a>  <!-- 다음 날짜 버튼을 추가합니다. -->
+        </div>
+        <div>
+            {{chart | safe}}
+        </div>
+        <a href="/" class="btn btn-secondary mt-4">Go Back to Dashboard</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
